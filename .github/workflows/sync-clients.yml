@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v3                      
       - name: Sync Client 1
         env:
-          GH_TOKEN: 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    
+          GH_TOKEN: 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
         run: |                        
           git remote add client1 https://${GH_TOKEN}@github.com/oscarmakala/multitest-client1-repo.git
           git push client1 main          
