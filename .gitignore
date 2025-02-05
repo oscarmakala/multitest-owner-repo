@@ -1,0 +1,9 @@
+
+.env*
+!.env.example
+config/private/
+**/secrets/
+*.key
+*.pem
+.secrets
+
