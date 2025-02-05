@@ -1,0 +1,23 @@
+# .github/workflows/sync-clients.yml
+name: Sync to Client Repositories
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.env*'
+      - 'config/private/**'
+      - '*.md'
+
+jobs:
+  sync-clients:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3                      
+      - name: Sync Client 1
+        env:
+          GH_TOKEN: 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    
+        run: |                        
+          git remote add client1 https://${GH_TOKEN}@github.com/oscarmakala/multitest-client1-repo.git
+          git push client1 main          
